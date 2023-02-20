@@ -1,46 +1,51 @@
 import React from 'react';
 import '../styles/NavBar.css';
+import logo from '../img/logo.svg';
+import todo from '../img/icon-todo.svg';
+import calendar from '../img/icon-reminders.svg';
+import planning from '../img/icon-planning.svg';
+import reminder from '../img/icon-reminders.svg';
 
 function Navbar() {
+  
     return (
       <div className="navbar">
-        <div className="logo">Logo</div>
+        <div className="logo">
+          <img src={logo} alt="" />
+        </div>
         <div className="dropdowns">
           <div className="dropdown">
-            Dropdown 1
+            Features
             <div className="dropdown-content">
               <ol>
-                <li>Item 1</li>
-                <li>Item 2</li>
-                <li>Item 3</li>
+                <li><img src={todo} alt=''></img>  To do List</li>
+                <li><img src={calendar} alt=''></img> Calendar</li>
+                <li><img src={reminder} alt=''></img> Reminder</li>
+                <li><img src={planning} alt=''></img> Planning</li>
               </ol>
             </div>
           </div>
           <div className="dropdown">
-            Dropdown 2
+            Company
             <div className="dropdown-content">
               <ol>
-                <li className=''>Item 1</li>
-                <li>Item 2</li>
-                <li>Item 3</li>
+                <li> History</li>
+                <li> Out Team</li>
+                <li> Blog</li>
               </ol>
-            </div>
+            </div>s
           </div>
           <div className="dropdown">
-            Dropdown 3
-            <div className="dropdown-content">
-              <ol>
-                <li>Item 1</li>
-                <li>Item 2</li>
-                <li>Item 3</li>
-              </ol>
-            </div>
+            Careers
+          </div>
+          <div className="dropdown">
+            About
           </div>
         </div>
         <div className="empty"></div>
         <div className="buttons">
-          <button>Button 1</button>
-          <button>Button 2</button>
+          <div className="dropdown">Login</div>
+          <button>Register</button>
         </div>
       </div>
     );
