@@ -10,6 +10,7 @@
 }
 
 .logo {
+    flex:1;
   padding: 10px;
 }
 
@@ -17,17 +18,10 @@
   display: flex;
   align-items: center;
   margin-left: 20px;
-  font-family: "Epilogue", sans-serif;
+  font-family: 'Epilogue', sans-serif;
   flex: 2;
   display: flex;
   justify-content: space-between;
-}
-
-.auth-links{
-  flex: 1;
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
 }
 
 .dropdown {
@@ -35,13 +29,13 @@
   margin-right: 20px;
   position: relative;
   cursor: pointer;
-  font-family: "Epilogue", sans-serif;
+  font-family: 'Epilogue', sans-serif;
   font-size: 15px;
 }
+
 .dropdown:hover {
   color: black;
 }
-
 
 .dropdown:hover .dropdown-content {
   display: block;
@@ -52,7 +46,8 @@
   display: none;
   position: absolute;
   top: 100%;
-  left: 0;
+  left: 50%;
+  transform: translateX(-50%);
   width: 200px;
   background-color: #f2f2f2;
   padding: 10px;
@@ -60,7 +55,7 @@
   border-radius: 5px;
   box-shadow: 1px 1px 10px 10px #0000002a;
   cursor: pointer;
-  font-family: "Epilogue", sans-serif;
+  font-family: 'Epilogue', sans-serif;
   font-size: 15px;
 }
 
@@ -74,11 +69,21 @@
   padding: 5px;
 }
 
-.dropdown-content li:hover {
-  border-left: 3px solid hsl(0, 0%, 41%);
+.dropdown-content li:hover{
+  border-left:3px solid hsl(0, 0%, 41%);
 }
 
-.dropdowns button {
+.empty {
+  flex: 1;
+}
+
+.buttons {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.buttons button {
   margin-left: 10px;
   padding: 10px;
   color: black;
@@ -86,76 +91,55 @@
   border-radius: 5px;
   cursor: pointer;
   background-color: white;
-  font-family: "Epilogue", sans-serif;
+  font-family: 'Epilogue', sans-serif;
   font-size: 15px;
 }
 
-.auth-links button:hover {
+.buttons button:hover{
   box-shadow: -1px -1px 0px 1px #000 inset;
-}
+} 
 
-.auth-links button:active {
+.buttons button:active{
   box-shadow: 1px 1px 0px 1px black inset;
 }
 
-.menu {
+.menu{
   display: none;
 }
 
 @media only screen and (max-width: 1024px) {
-  .dropdowns{
-    position: absolute;
+  .dropdowns,.empty,.buttons{
+    position:absolute;
     right: -4000px;
-    display: flex;
-    flex-direction: column;
-   
   }
-  .dropdowns .auth-links {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: center;
-  }
-
-  .menu {
+  .menu{
     display: block;
   }
 
-  .dropdowns.active .dropdown {
-    margin-bottom: 10px;
+  .dropdowns.active  {
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: flex;
-  }
-
-  .dropdowns.active {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: center;
     position: absolute;
     top: 10%;
     right: 0;
     color: black;
     transition: 1s;
-    background-color: rgb(220, 16, 16);
-    height: 100vh;
-    width: 50%;
+    background-color: white;
+    margin: 0 auto;
   }
 
-  
-
-  .dropdown-content{
-    justify-content: center;
-    position: static;
-    width: 100px;
+  .buttons.active{
+    display: flex;
     flex-direction: column;
+    position: absolute;
+    top: 20%;
+    right: 0;
+    transition: 1s;
+    background-color: white;
+    margin: 0 auto;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 1px 1px 10px 10px #0000002a;
   }
 
-  .dropdown{
-    align-items: center;
-    justify-content: center;
-  }
-  
-}
+  .dropdowns.active .dropdown, .dropdowns.active

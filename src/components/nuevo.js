@@ -12,11 +12,8 @@ function Navbar() {
 
   const handleClick = () => {
     setActive(!active);
+    console.log("Menú desplegable activado");
   };
-
-  const drop = document.getElementsByClassName('navbar');
-  const children = drop.children;
-  console.log(children);
 
   return (
     <div className="navbar">
@@ -52,13 +49,17 @@ function Navbar() {
               <li> Blog</li>
             </ol>
           </div>
+          s
         </div>
         <div className="dropdown">Careers</div>
         <div className="dropdown">About</div>
-        <div class="auth-links">
-          <div className="dropdown login">Login</div>
-          <button>Register</button>
-      </div>
+        <div className={`empty ${active ? "active" : ""}`}></div>
+        <div className={`buttons ${active ? "active" : ""}`}>
+          <div className="button-container">
+            <div className="dropdown">Login</div>
+            <button>Register</button>
+          </div>
+        </div>
       </div>
       <div className="menu">
         <img onClick={handleClick} src={menu} alt="" />
